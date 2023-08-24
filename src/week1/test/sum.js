@@ -20,6 +20,7 @@
  */
 function sum(numA, numB) {
   // TODO: 完成這個 function
+  return numA + numB;
 }
 
 export default sum;
