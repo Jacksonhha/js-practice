@@ -29,6 +29,17 @@
 
 function twoSum(nums, target) {
   // TODO: 完成這個 function
+  let Mymap = new Map();
+  for (let i = 0; i < nums.length; i++) {
+    Mymap.set(nums[i], i);
+  }
+  for (let x = 0; x < nums.length; x++) {
+    let goal = target - nums[x];
+    if (Mymap.has(goal) && x != Mymap.get(goal)) return [x, Mymap.get(goal)];
+  }
+  const sum = nums.reduce((acc, curr) => acc + curr, 0);
+  if (sum !== target) {
+    return [];
+  }
 }
-
 export default twoSum;
